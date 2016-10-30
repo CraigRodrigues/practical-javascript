@@ -7,4 +7,6 @@
 // It should have a changeTodo method
 // It should have a deleteTodo method
 
-console.log("Hello world!");
+var todoList = {
+    todos: ["item1", "item2", "item3"]
+};
