@@ -1,11 +1,10 @@
-// PSJ - V8
+// PSJ - V9
 
-// V8 Requirements
+// V9 Requirements
 
-// Add working controls for .addTodo
-// Add working controls for .changeTodo
-// Add working controls for .deleteTodo
-// Add working controls for .toggleCompleted
+// There should be an li element for every todo
+// Each li element should show .todoText
+// Each li element should show .completed
 
 var todoList = {
     todos: [],
@@ -66,6 +65,7 @@ var todoList = {
     }
 };
 
+// handles buttons, click events, and user input
 var handlers = {
     displayTodos: function () {
         todoList.displayTodos();
@@ -96,5 +96,27 @@ var handlers = {
     },
     toggleAll: function () {
         todoList.toggleAll();
+    }
+};
+
+// controls what the user sees
+var view =  {
+    displayTodos: function () {
+        var todosUl = document.querySelector("ul");
+        todosUl.innerHTML = "";
+        for (var i = 0; i < todoList.todos.length; i++) {
+            var todosLi = document.createElement("li");
+            var todoTextWithCompletion = "";
+            var todo = todoList.todos[i]; // to cut down on typing and enchance readability
+            
+            if (todo.completed === true) {
+                todoTextWithCompletion = "[X] " + todo.todoText;
+            } else {
+                todoTextWithCompletion = "[  ] " + todo.todoText;
+            }
+            
+            todosLi.textContent = todoTextWithCompletion;
+            todosUl.appendChild(todosLi);
+        }
     }
 };
