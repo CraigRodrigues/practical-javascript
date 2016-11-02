@@ -1,9 +1,9 @@
-// PSJ - V6
+// PSJ - V7
 
-// V6 Requirements
+// V7 Requirements
 
-// .toggleAll: If everything's true, make everything false.
-// .toggleAll: Otherwise, make everything true.
+// Clicking “Display todos” should run todoList.displayTodos
+// Clicking “Toggle all” should run todoList.toggleAll
 
 var todoList = {
     todos: [],
