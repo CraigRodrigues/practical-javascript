@@ -10,8 +10,24 @@
         </div>
         
         <div>
-            <button onclick="handlers.addTodoTextInput()">Add</button>
-            <input id="addTodoTextInput" type="text">
+            <button onclick="handlers.addTodo()">Add</button>
+            <input id="addTodoInputText" type="text">
+        </div>
+        
+        <div>
+            <button onclick="handlers.changeTodo()">Change Todo</button>
+            <input id="changeTodoInputPosition" type="number">
+            <input id="changeTodoInputText" type="text">
+        </div>
+        
+        <div>
+            <button onclick="handlers.deleteTodo()">Delete Todo</button>
+            <input id="deleteTodoInputPosition" type="number">
+        </div>
+        
+        <div>
+            <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
+            <input id="toggleCompletedInputPosition" type="number">
         </div>
             
         <script src="app.js"></script>

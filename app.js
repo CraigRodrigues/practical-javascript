@@ -70,12 +70,31 @@ var handlers = {
     displayTodos: function () {
         todoList.displayTodos();
     },
+    addTodo: function () {
+        var addTodoInputText = document.getElementById("addTodoInputText");
+        todoList.addTodo(addTodoInputText.value);
+        addTodoInputText.value = "";
+    },
+    changeTodo: function () {
+        var changeTodoInputPosition = document.getElementById("changeTodoInputPosition");
+        var changeTodoInputText = document.getElementById("changeTodoInputText");
+        
+        todoList.changeTodo(changeTodoInputPosition.valueAsNumber, changeTodoInputText.value);
+        
+        changeTodoInputPosition.value = "";
+        changeTodoInputText.value = "";
+    },
+    deleteTodo: function () {
+        var deleteTodoInputPosition = document.getElementById("deleteTodoInputPosition");
+        todoList.deleteTodo(deleteTodoInputPosition.valueAsNumber);
+        deleteTodoInputPosition.value = "";
+    },
+    toggleCompleted: function () {
+        var toggleCompletedInputPosition = document.getElementById("toggleCompletedInputPosition");
+        todoList.toggleCompleted(toggleCompletedInputPosition.valueAsNumber);
+        toggleCompletedInputPosition.value = "";
+    },
     toggleAll: function () {
         todoList.toggleAll();
-    },
-    addTodoTextInput: function () {
-        var addTodoTextInput = document.getElementById("addTodoTextInput");
-        todoList.addTodo(addTodoTextInput.value);
-        addTodoTextInput.value = "";
     }
 };
