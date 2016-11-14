@@ -1,10 +1,11 @@
-// PSJ - V9
+// PSJ - V10
 
-// V9 Requirements
+// V10 Requirements
 
 // There should be an li element for every todo
 // Each li element should show .todoText
 // Each li element should show .completed
+
 
 // only handles our todo list raw data via an array
 var todoList = {
@@ -67,7 +68,7 @@ var handlers = {
         view.displayTodos();
     },
     deleteTodo: function () {
-        var deleteTodoInputPosition = document.getElementById("deleteTodoInputPosition");
+        var deleteTodoInputPosition = this.;
         todoList.deleteTodo(deleteTodoInputPosition.valueAsNumber);
         deleteTodoInputPosition.value = "";
         view.displayTodos();
@@ -101,7 +102,22 @@ var view =  {
             }
             
             todosLi.textContent = todoTextWithCompletion;
+            todosLi.appendChild(this.createDeleteButton());
             todosUl.appendChild(todosLi);
         }
+    },
+    createDeleteButton: function() {
+        var deleteButton = document.createElement("button");
+        deleteButton.textContent = "delete";
+        deleteButton.className = "deleteButton";
+        return deleteButton;
     }
 };
+
+var todosUl = document.querySelector("ul");
+
+todosUl.addEventListener(click, function(event) {
+    var elementClicked = event.target
+
+    return event.target.parentNode.id;
+});
