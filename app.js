@@ -68,7 +68,7 @@ var handlers = {
         view.displayTodos();
     },
     deleteTodo: function () {
-        var deleteTodoInputPosition = this.;
+        var deleteTodoInputPosition = 0;
         todoList.deleteTodo(deleteTodoInputPosition.valueAsNumber);
         deleteTodoInputPosition.value = "";
         view.displayTodos();
@@ -101,6 +101,7 @@ var view =  {
                 todoTextWithCompletion = "[  ] " + todo.todoText;
             }
             
+            todoLi.id = i;
             todosLi.textContent = todoTextWithCompletion;
             todosLi.appendChild(this.createDeleteButton());
             todosUl.appendChild(todosLi);
