@@ -1,13 +1,11 @@
-// PSJ - V10
+// PSJ - V9
 
-// V10 Requirements
+// V9 Requirements
 
 // There should be an li element for every todo
 // Each li element should show .todoText
 // Each li element should show .completed
 
-
-// only handles our todo list raw data via an array
 var todoList = {
     todos: [],
     addTodo: function(todoText) {
@@ -48,7 +46,7 @@ var todoList = {
     }
 };
 
-// only handles user interactions via buttons, click events, and user input
+// handles buttons, click events, and user input
 var handlers = {
     addTodo: function () {
         var addTodoInputText = document.getElementById("addTodoInputText");
@@ -68,7 +66,7 @@ var handlers = {
         view.displayTodos();
     },
     deleteTodo: function () {
-        var deleteTodoInputPosition = 0;
+        var deleteTodoInputPosition = document.getElementById("deleteTodoInputPosition");
         todoList.deleteTodo(deleteTodoInputPosition.valueAsNumber);
         deleteTodoInputPosition.value = "";
         view.displayTodos();
@@ -85,7 +83,7 @@ var handlers = {
     }
 };
 
-// only controls what the todo list looks like
+// only controls what the user sees and nothing else
 var view =  {
     displayTodos: function () {
         var todosUl = document.querySelector("ul");
@@ -101,24 +99,8 @@ var view =  {
                 todoTextWithCompletion = "[  ] " + todo.todoText;
             }
             
-            todoLi.id = i;
             todosLi.textContent = todoTextWithCompletion;
-            todosLi.appendChild(this.createDeleteButton());
             todosUl.appendChild(todosLi);
         }
-    },
-    createDeleteButton: function() {
-        var deleteButton = document.createElement("button");
-        deleteButton.textContent = "delete";
-        deleteButton.className = "deleteButton";
-        return deleteButton;
     }
 };
-
-var todosUl = document.querySelector("ul");
-
-todosUl.addEventListener(click, function(event) {
-    var elementClicked = event.target
-
-    return event.target.parentNode.id;
-});
