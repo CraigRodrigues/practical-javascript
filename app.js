@@ -1,10 +1,6 @@
-// PSJ - V9
-
-// V9 Requirements
-
-// There should be an li element for every todo
-// Each li element should show .todoText
-// Each li element should show .completed
+// Practical Javascript
+// Todo List
+// Version 10
 
 var todoList = {
     todos: [],
