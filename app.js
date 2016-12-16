@@ -84,7 +84,7 @@ var handlers = {
 };
 
 // only controls what the user sees and nothing else
-var view =  {
+var view = {
     displayTodos: function () {
         var todosUl = document.querySelector("ul");
         todosUl.innerHTML = "";
@@ -100,7 +100,14 @@ var view =  {
             }
             
             todosLi.textContent = todoTextWithCompletion;
+            todosLi.appendChild(this.createDeleteButton());
             todosUl.appendChild(todosLi);
         }
+    },
+    createDeleteButton: function () {
+      var deleteButton = document.createElement('button');
+      deleteButton.textContent = 'Delete';
+      deleteButton.className = 'deleteButton';
+      return deleteButton;
     }
 };
